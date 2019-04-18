@@ -1,11 +1,12 @@
 import React from 'react';
 import './Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import history from '../utils/history';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as userActions from '../actions/userActions';
 import * as translateActions from '../actions/translateActions';
+import { withRouter } from 'react-router';
+import { Redirect } from 'react-router-dom';
 
 const styles = {
 	center: {
@@ -25,7 +26,7 @@ class Login extends React.Component {
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.onChangeLanguage = this.onChangeLanguage.bind(this);
 
-		console.log(this.props.language)
+		console.log(this.props)
 	}
 
 	handleSubmit(event) {
@@ -55,6 +56,9 @@ class Login extends React.Component {
 	}
 
 	render() {
+		if( this.props.user.username ){
+			return (<Redirect to='/home' />)
+		}
 		return (
 			<div className="row">
 				<div className="col-sm-6 col-md-6 col-md-offset-4" style={styles.center}>
@@ -88,6 +92,7 @@ class Login extends React.Component {
 
 function mapStateToProps(state) {
 	return {
+		user: state.user,
 		translate: state.translate.translate,
 		language: state.translate.language
 	};
@@ -100,7 +105,7 @@ function mapDispatchToProps(dispatch) {
 	};
 }
 
-export default connect(
+export default withRouter(connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Login);
+)(Login));

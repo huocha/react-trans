@@ -1,4 +1,3 @@
-import axios from 'axios';
 import history from '../utils/history';
 
 
@@ -12,11 +11,11 @@ function loginUser(props) {
 			body: JSON.stringify(props)
 		}).then((response) => {
 			if( response.ok) {
-				dispatch({ type: 'LOGIN_SUCCESS', payload: email });
-				return history.push('/home');
+				return dispatch({ type: 'LOGIN_SUCCESS', payload: email });
+
 			}
 
-			dispatch({ type: 'LOGIN_FAIL'});
+			return dispatch({ type: 'LOGIN_FAIL'});
 
 		}).catch((error) => dispatch({ type: 'LOGIN_FAIL'}));
 	};

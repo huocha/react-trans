@@ -25,10 +25,6 @@ if (user && user.token) {
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Router history={history}>
-			<Route exact path="/" component={App} />
-			<Route path="/login" component={Login} />
-			<Route path="/home" component={Home} />
-		</Router>
+		<App />
 	</Provider>
 	, document.getElementById('root'));

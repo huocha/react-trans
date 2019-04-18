@@ -2,22 +2,31 @@ import React, { Component } from 'react';
 //import './app.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './Login';
+import Home from './Home';
+import Error from './Error';
+import Navigation from './Navigation';
+import history from '../utils/history';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import * as translateActions from '../actions/translateActions';
 
 class App extends Component {
-	componentDidMount() {
-		fetch('/api/getUsername')
-			.then(res => res.json())
-			.then(user => this.setState({ username: user.username }));
-	}
-
 	render() {
 		return (
-			<div className="container">
-				<Login />
-			</div>
+
+			<BrowserRouter history={history}>
+				<div>
+					<Navigation></Navigation>
+					<Switch>
+						<Route exact path="/" component={Login}  />
+						<Route path="/login" component={Login} />
+						<Route path="/home" component={Home} />
+						<Route component={Error} />
+					</Switch>
+				</div>
+			</BrowserRouter>
+
 		);
 	}
 }

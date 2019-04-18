@@ -1,4 +1,5 @@
 {
+	"hello": "Hello",
 	"login.title": "Log in",
 	"login.email": "Email",
 	"login.password": "Password",

@@ -2,17 +2,21 @@ import React from 'react'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as userActions from '../actions/userActions';
+import { Redirect } from 'react-router-dom';
 
 class Home extends React.Component {
 	constructor(props){
 		super(props);
-		console.log(props);
+		console.log(props.translate['hello']);
 	}
 
 	render(){
+		if( !this.props.user.username ){
+			return (<Redirect to='/login' />);
+		}
 		return (
 			<div>
-				<h1>Hello {this.props.username}</h1>
+				<h1>{this.props.translate.hello} {this.props.user.username}</h1>
 			</div>
 		);
 	}
@@ -21,7 +25,11 @@ class Home extends React.Component {
 
 
 function mapStateToProps(state) {
-	return { username: state.user.username };
+	return {
+		user: state.user,
+		translate: state.translate.translate,
+		language: state.translate.language
+	};
 }
 
 function mapDispatchToProps(dispatch) {
