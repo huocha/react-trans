@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('dist'));
+
 app.get('/api/getUsername', (req, res) => res.send({ username: os.userInfo().username }));
 
 const user = {
@@ -13,7 +14,7 @@ const user = {
 	password: 'jasmine'
 };
 
-app.post('/login', (req, res) => {
+app.post('/api/login/', (req, res) => {
 	console.log( req.body )
 	const { email, password } = req.body;
 

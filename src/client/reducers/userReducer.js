@@ -1,13 +1,23 @@
 /* eslint default-case: 0 */
 import {
-  FETCH_USERS,
+	FETCH_USERS,
 } from '../actions/types/index';
 
-export default function (state = {}, action) {
-  switch (action.type) {
-    case FETCH_USERS:
-      return { list: action.payload, ...state };
-  }
+const initialState = {
+	username: ''
+};
 
-  return state;
+export default function (state = initialState, action) {
+	switch (action.type) {
+
+	case 'LOGIN_SUCCESS':
+		state = { ...state, username: action.payload };
+		break;
+
+	case FETCH_USERS:
+		state = { ...state, list: action.payload };
+		break;
+	}
+
+	return state;
 }

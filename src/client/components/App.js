@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 //import './app.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './Login';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as translateActions from '../actions/translateActions';
 
-export default class App extends Component {
+class App extends Component {
 	componentDidMount() {
 		fetch('/api/getUsername')
 			.then(res => res.json())
@@ -18,3 +21,20 @@ export default class App extends Component {
 		);
 	}
 }
+
+
+
+function mapStateToProps(state) {
+	return { translate: state.translate };
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		translateActions: bindActionCreators(translateActions, dispatch),
+	};
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(App);

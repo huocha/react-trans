@@ -1,0 +1,9 @@
+{
+	"login.title": "Log in",
+	"login.email": "Email",
+	"login.password": "Password",
+	"login.submit": "Log in",
+	"login.remember": "Remember me",
+	"login.help": "Need help?",
+	"register": "Create an account"
+}
