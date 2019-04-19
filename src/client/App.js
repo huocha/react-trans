@@ -10,7 +10,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import * as translateActions from './actions/translateActions';
-
+import { AppHeader } from '@coreui/react';
+import Header from './components/Header';
 
 class App extends Component {
 	render() {
@@ -18,7 +19,9 @@ class App extends Component {
 
 			<BrowserRouter history={history}>
 				<div>
-					{/*<Navigation></Navigation>*/}
+					<AppHeader fixed>
+						<Header onLogout={e=> console.log(e)}/>
+					</AppHeader>
 					<Switch>
 						<Route exact path="/" component={Login}  />
 						<Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
