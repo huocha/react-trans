@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as translateActions from '../../actions/translateActions';
 import { AppAsideToggler, AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
+import Select, { components } from 'react-select';
 
 
 const propTypes = {
@@ -13,6 +14,22 @@ const propTypes = {
 };
 
 const defaultProps = {};
+
+
+const Option = props => {
+	return (
+		<div className="d-inline-block">
+			<img style={{ width: '24px' }} src={props.data.img} />
+			<span>{props.data.label}</span>
+		</div>
+	);
+};
+
+const options = [
+	{ value: 'en', label: 'English', img: '../public/assets/img/en.png' },
+	{ value: 'fr', label: 'Français', img:  '../public/assets/img/fr.png' },
+];
+
 
 class Header extends Component {
 	constructor(props){
@@ -63,10 +80,12 @@ class Header extends Component {
 					<NavItem className="d-md-down-none">
 						<NavLink to="#" className="nav-link"><i className="icon-location-pin"></i></NavLink>
 					</NavItem>
-					<select name="lang" onChange={this.onChangeLanguage}>
-						<option name="en" value="en">English</option>
-						<option name="fr" value="fr">Français</option>
-					</select>
+					<NavItem className="d-md-down-none">
+						<div style={{ width: '80px'}}>
+							<Select options={options} components={{ Option: Option }}>
+							</Select>
+						</div>
+					</NavItem>
 					<AppHeaderDropdown direction="down">
 						{/*<DropdownToggle nav>
 							<img src={'../../assets/img/avatars/6.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
