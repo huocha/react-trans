@@ -13,20 +13,27 @@
   "author": "Jasmine Nguyen",
   "license": "ISC",
   "dependencies": {
+    "@coreui/coreui": "^2.1.9",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.3.1",
     "express": "^4.16.3",
+    "flag-icon-css": "^3.3.0",
+    "font-awesome": "^4.7.0",
     "history": "^4.9.0",
+    "node-sass": "^4.11.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^7.0.2",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
+    "reactstrap": "^8.0.0",
     "redux": "^4.0.1",
     "redux-form": "^8.2.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sass-loader": "^7.1.0",
+    "simple-line-icons": "^2.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

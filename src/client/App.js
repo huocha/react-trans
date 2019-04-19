@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-//import './app.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './Login';
-import Home from './Home';
-import Error from './Error';
-import Navigation from './Navigation';
-import history from '../utils/history';
+import './app.scss';
+import Login from './components/Login';
+import Home from './components/Home';
+import Register from './components/Register';
+import Error from './components/Error';
+import Navigation from './components/Navigation';
+import history from './utils/history';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
-import * as translateActions from '../actions/translateActions';
+import * as translateActions from './actions/translateActions';
+
 
 class App extends Component {
 	render() {
@@ -17,9 +18,11 @@ class App extends Component {
 
 			<BrowserRouter history={history}>
 				<div>
-					<Navigation></Navigation>
+					{/*<Navigation></Navigation>*/}
 					<Switch>
 						<Route exact path="/" component={Login}  />
+						<Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
+						<Route exact path="/register" name="Register Page" render={props => <Register {...props}/>} />
 						<Route path="/login" component={Login} />
 						<Route path="/home" component={Home} />
 						<Route component={Error} />
