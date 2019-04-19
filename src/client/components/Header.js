@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Badge, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem } from 'reactstrap';
 import PropTypes from 'prop-types';
-
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as translateActions from '../actions/translateActions';
 import { AppAsideToggler, AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 
 
@@ -12,7 +14,17 @@ const propTypes = {
 
 const defaultProps = {};
 
-class DefaultHeader extends Component {
+class Header extends Component {
+	constructor(props){
+		super(props);
+		this.onChangeLanguage = this.onChangeLanguage.bind(this);
+	}
+
+	onChangeLanguage(e){
+		const lang = e.target.value;
+		this.props.translateActions.changeLangue(lang);
+	}
+
 	render() {
 
 		// eslint-disable-next-line
@@ -48,6 +60,10 @@ class DefaultHeader extends Component {
 					<NavItem className="d-md-down-none">
 						<NavLink to="#" className="nav-link"><i className="icon-location-pin"></i></NavLink>
 					</NavItem>
+					<select name="lang" onChange={this.onChangeLanguage}>
+						<option name="en" value="en">English</option>
+						<option name="fr" value="fr">Français</option>
+					</select>
 					<AppHeaderDropdown direction="down">
 						{/*<DropdownToggle nav>
 							<img src={'../../assets/img/avatars/6.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
@@ -76,7 +92,20 @@ class DefaultHeader extends Component {
 	}
 }
 
-DefaultHeader.propTypes = propTypes;
-DefaultHeader.defaultProps = defaultProps;
+Header.propTypes = propTypes;
+Header.defaultProps = defaultProps;
 
-export default DefaultHeader;
+function mapStateToProps(state) {
+	return { translate: state.translate };
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		translateActions: bindActionCreators(translateActions, dispatch),
+	};
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Header);

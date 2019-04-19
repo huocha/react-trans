@@ -1,10 +1,20 @@
 {
-	"hello": "Hello",
 	"login.title": "Log in",
 	"login.email": "Email",
 	"login.password": "Password",
 	"login.submit": "Log in",
+	"login.forget": "Forgot password?",
 	"login.remember": "Remember me",
 	"login.help": "Need help?",
-	"register": "Create an account"
+	"login.register": "Sign up",
+	"login.register.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia neque quis nulla placerat, vitae gravida nulla auctor. Nullam id velit vitae orci sollicitudin mollis sed vel eros. Ut ultricies ante ligula. Integer vel dolor in dui fringilla sollicitudin.",
+	"login.register.button": "Register now!",
+
+	"register.title": "Register",
+	"register.subtitle": "Create your account",
+	"register.username": "Username",
+	"register.email": "Email",
+	"register.password": "Password",
+	"register.confirmPassword": "Confirm password",
+	"register.submit": "Create account"
 }

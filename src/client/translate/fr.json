@@ -1,10 +1,21 @@
 {
-	"hello": "Bonjour",
 	"login.title": "Se conncecter",
 	"login.email": "Email",
 	"login.password": "Mot de passe",
 	"login.submit": "Valider",
+	"login.forget": "Mot de passe oublié?",
 	"login.remember": "Rester connecté",
 	"login.help": "Besoin d'aide?",
-	"register": "Créer un compte"
+	"login.register": "Se conncecter",
+	"login.register.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia neque quis nulla placerat, vitae gravida nulla auctor. Nullam id velit vitae orci sollicitudin mollis sed vel eros. Ut ultricies ante ligula. Integer vel dolor in dui fringilla sollicitudin.",
+	"login.register.button": "Créer un compte now!",
+
+	"register.title": "S'inscrire",
+	"register.subtitle": "Créer votre compte",
+	"register.username": "Nom d'utilisateur",
+	"register.email": "Email",
+	"register.password": "Mot de passe",
+	"register.confirmPassword": "Confirmez le mot de passe",
+	"register.submit": "Créer compte"
+
 }

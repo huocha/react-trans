@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './app.scss';
-import Login from './components/Login';
+import LoginContainer from './container/LoginContainer';
 import Home from './components/Home';
-import Register from './components/Register';
+import RegisterContainer from './container/RegisterContainer';
 import Error from './components/Error';
 import Navigation from './components/Navigation';
 import history from './utils/history';
@@ -23,11 +23,9 @@ class App extends Component {
 						<Header onLogout={e=> console.log(e)}/>
 					</AppHeader>
 					<Switch>
-						<Route exact path="/" component={Login}  />
-						<Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
-						<Route exact path="/register" name="Register Page" render={props => <Register {...props}/>} />
-						<Route path="/login" component={Login} />
-						<Route path="/home" component={Home} />
+						<Route exact path="/" component={LoginContainer}  />
+						<Route exact path="/login" name="Login Page" render={props => <LoginContainer {...props}/>} />
+						<Route exact path="/register" name="Register Page" render={props => <RegisterContainer {...props}/>} />
 						<Route component={Error} />
 					</Switch>
 				</div>

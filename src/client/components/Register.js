@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardFooter, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 
-class Register extends Component {
+export default class Register extends Component {
+	constructor(props){
+		super(props);
+		console.log(props)
+	}
+
 	render() {
 		return (
 			<div className="app flex-row align-items-center">
@@ -11,21 +16,21 @@ class Register extends Component {
 							<Card className="mx-4">
 								<CardBody className="p-4">
 									<Form>
-										<h1>Register</h1>
-										<p className="text-muted">Create your account</p>
+										<h1>{this.props.translate['register.title']}</h1>
+										<p className="text-muted">{this.props.translate['register.subtitle']}</p>
 										<InputGroup className="mb-3">
 											<InputGroupAddon addonType="prepend">
 												<InputGroupText>
 													<i className="icon-user"></i>
 												</InputGroupText>
 											</InputGroupAddon>
-											<Input type="text" placeholder="Username" autoComplete="username" />
+											<Input type="text" placeholder={this.props.translate['register.username']} autoComplete="username" />
 										</InputGroup>
 										<InputGroup className="mb-3">
 											<InputGroupAddon addonType="prepend">
 												<InputGroupText>@</InputGroupText>
 											</InputGroupAddon>
-											<Input type="text" placeholder="Email" autoComplete="email" />
+											<Input type="text" placeholder={this.props.translate['register.email']} autoComplete="email" />
 										</InputGroup>
 										<InputGroup className="mb-3">
 											<InputGroupAddon addonType="prepend">
@@ -33,7 +38,7 @@ class Register extends Component {
 													<i className="icon-lock"></i>
 												</InputGroupText>
 											</InputGroupAddon>
-											<Input type="password" placeholder="Password" autoComplete="new-password" />
+											<Input type="password" placeholder={this.props.translate['register.password']} autoComplete="new-password" />
 										</InputGroup>
 										<InputGroup className="mb-4">
 											<InputGroupAddon addonType="prepend">
@@ -41,9 +46,9 @@ class Register extends Component {
 													<i className="icon-lock"></i>
 												</InputGroupText>
 											</InputGroupAddon>
-											<Input type="password" placeholder="Repeat password" autoComplete="new-password" />
+											<Input type="password" placeholder={this.props.translate['register.confirmPassword']} autoComplete="new-password" />
 										</InputGroup>
-										<Button color="success" block>Create Account</Button>
+										<Button color="success" block>{this.props.translate['register.submit']}</Button>
 									</Form>
 								</CardBody>
 								<CardFooter className="p-4">
@@ -64,5 +69,3 @@ class Register extends Component {
 		);
 	}
 }
-
-export default Register;
