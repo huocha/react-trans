@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './App';
@@ -14,8 +14,8 @@ import ResetPasswordNew from './components/resetPassword/ResetPasswordNew';
 */
 
 
-export default (
+/*export default (
 	<Route exact path="/" component={App}>
 		<Route path="login" component={(Login)} />
 	</Route>
-);
+);*/

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Register from '../components/Register';
+import Register from '../components/Home/Register';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as userActions from '../actions/userActions';

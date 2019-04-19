@@ -4,7 +4,7 @@ import { Badge, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem } from 
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as translateActions from '../actions/translateActions';
+import * as translateActions from '../../actions/translateActions';
 import { AppAsideToggler, AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 
 
@@ -22,7 +22,10 @@ class Header extends Component {
 
 	onChangeLanguage(e){
 		const lang = e.target.value;
-		this.props.translateActions.changeLangue(lang);
+		if(this.props.translate.language !== lang){
+			this.props.translateActions.changeLangue(lang);
+		}
+
 	}
 
 	render() {
