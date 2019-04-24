@@ -82,7 +82,10 @@ export default class Login extends Component {
 											<h2>{this.props.translate['login.register']}</h2>
 											<p>{this.props.translate['login.register.description']}</p>
 											<Link to="/register">
-												<Button color="primary" className="mt-3" active tabIndex={-1}>{this.props.translate['login.register.button']}</Button>
+												<Button color="secondary" className="mt-3" active tabIndex={-1}>{this.props.translate['login.register.button.register']}</Button>
+											</Link>
+											<Link to="/translator">
+												<Button color="primary" className="mt-3" active tabIndex={-1}>{this.props.translate['login.register.button.demo']}</Button>
 											</Link>
 										</div>
 									</CardBody>

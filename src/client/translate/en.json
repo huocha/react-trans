@@ -8,7 +8,8 @@
 	"login.help": "Need help?",
 	"login.register": "Sign up",
 	"login.register.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia neque quis nulla placerat, vitae gravida nulla auctor. Nullam id velit vitae orci sollicitudin mollis sed vel eros. Ut ultricies ante ligula. Integer vel dolor in dui fringilla sollicitudin.",
-	"login.register.button": "Register now!",
+	"login.register.button.register": "Register now!",
+	"login.register.button.demo": "Try now!",
 
 	"register.title": "Register",
 	"register.subtitle": "Create your account",
