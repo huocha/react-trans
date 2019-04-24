@@ -21,7 +21,7 @@ export default class Register extends Component {
 										<InputGroup className="mb-3">
 											<InputGroupAddon addonType="prepend">
 												<InputGroupText>
-													<i className="icon-user"></i>
+													<i className="fa fa-user"></i>
 												</InputGroupText>
 											</InputGroupAddon>
 											<Input type="text" placeholder={this.props.translate['register.username']} autoComplete="username" />
@@ -35,7 +35,7 @@ export default class Register extends Component {
 										<InputGroup className="mb-3">
 											<InputGroupAddon addonType="prepend">
 												<InputGroupText>
-													<i className="icon-lock"></i>
+													<i className="fa fa-lock"></i>
 												</InputGroupText>
 											</InputGroupAddon>
 											<Input type="password" placeholder={this.props.translate['register.password']} autoComplete="new-password" />
@@ -43,7 +43,7 @@ export default class Register extends Component {
 										<InputGroup className="mb-4">
 											<InputGroupAddon addonType="prepend">
 												<InputGroupText>
-													<i className="icon-lock"></i>
+													<i className="fa fa-lock"></i>
 												</InputGroupText>
 											</InputGroupAddon>
 											<Input type="password" placeholder={this.props.translate['register.confirmPassword']} autoComplete="new-password" />

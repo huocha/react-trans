@@ -52,7 +52,7 @@ export default class Login extends Component {
 											<InputGroup className="mb-3">
 												<InputGroupAddon addonType="prepend">
 													<InputGroupText>
-														<i className="icon-user"></i>
+														<i className="fa fa-user"></i>
 													</InputGroupText>
 												</InputGroupAddon>
 												<Input type="text" placeholder={this.props.translate['login.email']} autoComplete="username" />
@@ -60,7 +60,7 @@ export default class Login extends Component {
 											<InputGroup className="mb-4">
 												<InputGroupAddon addonType="prepend">
 													<InputGroupText>
-														<i className="icon-lock"></i>
+														<i className="fa fa-lock"></i>
 													</InputGroupText>
 												</InputGroupAddon>
 												<Input type="password" placeholder={this.props.translate['login.password']} autoComplete="current-password" />
