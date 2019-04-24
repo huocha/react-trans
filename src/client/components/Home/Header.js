@@ -38,11 +38,9 @@ class Header extends Component {
 	}
 
 	onChangeLanguage(e){
-		const lang = e.target.value;
-		if(this.props.translate.language !== lang){
-			this.props.translateActions.changeLangue(lang);
+		if(this.props.translate.language !== e.value){
+			this.props.translateActions.changeLangue(e.value);
 		}
-
 	}
 
 	render() {
@@ -81,9 +79,13 @@ class Header extends Component {
 						<NavLink to="#" className="nav-link"><i className="icon-location-pin"></i></NavLink>
 					</NavItem>
 					<NavItem className="d-md-down-none">
-						<div style={{ width: '80px'}}>
-							<Select options={options} components={{ Option: Option }}>
-							</Select>
+						<div style={{ width: '100px'}}>
+							<Select
+								value={options.filter(option => option.value === this.props.translate.language)}
+								onChange={this.onChangeLanguage}
+								options={options}
+								// components={{ Option: Option }}
+							/>
 						</div>
 					</NavItem>
 					<AppHeaderDropdown direction="down">
