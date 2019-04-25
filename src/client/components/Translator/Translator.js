@@ -68,6 +68,7 @@ class Translator extends Component {
 												value={optionsSource.filter(option => option.value === this.state.source)}
 												onChange={this.onChangeSource}
 												options={optionsSource}
+												styles={{ singleValue: (base) => ({ ...base, color: '#20a8d8', fontWeight: '480' }) }}
 												// components={{ Option: Option }}
 											/>
 										</div>
@@ -97,6 +98,7 @@ class Translator extends Component {
 												 value={optionsTarget.filter(option => option.value === this.state.target)}
 												 onChange={this.onChangeTarget}
 												 options={optionsTarget}
+												 styles={{ singleValue: (base) => ({ ...base, color: '#f86c6b', fontWeight: '480' }) }}
 												 // components={{ Option: Option }}
 											 />
 										 </div>

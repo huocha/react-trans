@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import * as translateActions from '../../actions/translateActions';
 import { AppAsideToggler, AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import Select, { components } from 'react-select';
-/*import logo from '../../public/assets/img/logo.jpg';*/
 
 const propTypes = {
 	children: PropTypes.node,
@@ -80,14 +79,14 @@ class Header extends Component {
 				</div>
 				<Nav className="ml-auto" navbar>
 					<NavItem className="d-md-down-none">
-						<NavLink to="#" className="nav-link"><i className="icon-bell"></i><Badge pill color="danger">5</Badge></NavLink>
+						<NavLink to="#" className="nav-link"><i className="fa fa-shopping-cart"></i><Badge pill color="danger">5</Badge></NavLink>
 					</NavItem>
 					<NavItem className="d-md-down-none">
 						<NavLink to="#" className="nav-link"><i className="icon-list"></i></NavLink>
 					</NavItem>
-					<NavItem className="d-md-down-none">
+					{/*<NavItem className="d-md-down-none">
 						<NavLink to="#" className="nav-link"><i className="icon-location-pin"></i></NavLink>
-					</NavItem>
+					</NavItem>*/}
 					<NavItem className="d-md-down-none">
 						<div style={{ width: '100px'}}>
 							<Select
@@ -113,7 +112,7 @@ class Header extends Component {
 						</Dropdown >
 					</NavItem>
 				</Nav>
-				<AppAsideToggler className="d-md-down-none" />
+				{/*<AppAsideToggler className="d-md-down-none" />*/}
 				{/*<AppAsideToggler className="d-lg-none" mobile />*/}
 			</React.Fragment>
 		);
