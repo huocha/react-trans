@@ -49,7 +49,8 @@ class Translator extends Component {
 
 	onTranslate(e){
 		this.setState({
-			inputSource: e.target.value
+			inputSource: e.target.value,
+			inputTarget: e.target.value
 		});
 	}
 	render() {
@@ -62,7 +63,7 @@ class Translator extends Component {
 								<Col xs="12" md="11">
 								 	<div className='pull-right' htmlFor="textarea-input" style={{ paddingBottom: '15px' }}>
 										<span className="d-inline-block">Translate from </span>
-										<div className="d-inline-block" style={{ width: '140px'}}>
+										<div className="d-inline-block" style={{ width: '140px', paddingLeft: '5px'}}>
 											<Select
 												value={optionsSource.filter(option => option.value === this.state.source)}
 												onChange={this.onChangeSource}
@@ -91,7 +92,7 @@ class Translator extends Component {
 								 <InputGroup htmlFor="textarea-input">
 									 <div className='pull-right' htmlFor="textarea-input" style={{ paddingBottom: '15px' }}>
 										 <span className="d-inline-block">Translate into </span>
-										 <div className="d-inline-block" style={{ width: '140px'}}>
+										 <div className="d-inline-block" style={{ width: '140px', paddingLeft: '5px'}}>
 											 <Select
 												 value={optionsTarget.filter(option => option.value === this.state.target)}
 												 onChange={this.onChangeTarget}
@@ -101,28 +102,28 @@ class Translator extends Component {
 										 </div>
 									 </div>
 									 </InputGroup>
-									 	<Input type="textarea" name="textarea-input" id="textarea-input" rows="11" />
+									 	<Input type="textarea" name="textarea-input" id="textarea-input" rows="11" value={this.state.inputTarget}/>
 								 </Col>
 							 </FormGroup>
 						</Col>
 					</Row>
-					<Row className="d-flex justify-content-center">
+					<Row className="d-flex justify-content-center" style={{ paddingTop: '50px'}}>
 
 						<div className="d-inline-block" style={{ paddindLeft: '10px', paddingRight: '10px' }}>
-							<span className="fa-stack fa-lg" style={{ fontSize: '35px'}}>
+							<span className="fa-stack fa-lg" style={{ fontSize: '30px'}}>
 								<i className="fa fa-circle fa-stack-2x"></i>
 								<i className="fa fa-history fa-stack-1x fa-inverse"></i>
 							</span>
 						</div>
 						<div className="d-inline-block" style={{ paddindLeft: '10px', paddingRight: '10px' }}>
-							<span className="fa-stack fa-lg" style={{ fontSize: '35px'}}>
+							<span className="fa-stack fa-lg" style={{ fontSize: '30px'}}>
 								<i className="fa fa-circle fa-stack-2x"></i>
 								<i className="fa fa-star fa-stack-1x fa-inverse"></i>
 							</span>
 
 						</div>
 						<div className="d-inline-block" style={{ paddindLeft: '10px', paddingRight: '10px' }}>
-							<span className="fa-stack fa-lg" style={{ fontSize: '35px'}}>
+							<span className="fa-stack fa-lg" style={{ fontSize: '30px'}}>
 								<i className="fa fa-circle fa-stack-2x"></i>
 								<i className="fa fa-users fa-stack-1x fa-inverse"></i>
 							</span>
