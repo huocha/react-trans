@@ -22,6 +22,7 @@ class App extends Component {
 					<Switch>
 						<Route exact path="/" component={Container.Login}  />
 						<Route exact path="/login" name="Login Page" render={props => <Container.Login {...props}/>} />
+						<Route exact path="/profile" name="Profile Page" render={props => <Container.Profile {...props}/>} />
 						<Route exact path="/register" name="Register Page" render={props => <Container.Register {...props}/>} />
 						<Route exact path="/translator" name="Translator Page" render={props => <Container.Translator {...props}/>} />
 						<Route component={Container.Page404} />

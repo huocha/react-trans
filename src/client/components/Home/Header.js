@@ -100,13 +100,13 @@ class Header extends Component {
 					<NavItem className="d-md-down-none">
 						<Dropdown direction="down" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
 							<DropdownToggle nav>
-								<img src={'../public/assets/img/user.png'} className="img-avatar" alt="admin@bootstrapmaster.com" />
+								<img src={'../public/assets/img/user.png'} className="img-avatar" alt="" />
 							</DropdownToggle>
 							<DropdownMenu right>
-								<DropdownItem header tag="div" className="text-center"><strong>John Doe</strong></DropdownItem>
-								<DropdownItem><i className="fa fa-user"></i> Profile</DropdownItem>
+								<DropdownItem header tag="div" className="text-center"><div><strong>John Doe</strong></div><small>(john.doe@dodo.com)</small></DropdownItem>
+								<DropdownItem><Link to='/profile'><i className="fa fa-user"></i> Profile</Link></DropdownItem>
+								<DropdownItem><i className="fa fa-shopping-cart"></i> Cart<Badge color="danger">42</Badge></DropdownItem>
 								<DropdownItem><i className="fa fa-wrench"></i> Settings</DropdownItem>
-								<DropdownItem><i className="fa fa-usd"></i> Cart<Badge color="danger">42</Badge></DropdownItem>
 								<DropdownItem onClick={e => this.props.onLogout(e)}><i className="fa fa-lock"></i> Logout</DropdownItem>
 							</DropdownMenu>
 						</Dropdown >
