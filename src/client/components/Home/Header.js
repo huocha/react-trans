@@ -74,20 +74,10 @@ class Header extends Component {
 		return (
 			<React.Fragment>
 				<AppSidebarToggler className="d-lg-none" display="md" mobile />
-
-				<AppSidebarToggler className="d-md-down-none" display="lg" />
-
-				<Nav className="d-md-down-none" navbar>
-					<NavItem className="px-3">
-						<NavLink to="/dashboard" className="nav-link" >Dashboard</NavLink>
-					</NavItem>
-					<NavItem className="px-3">
-						<Link to="/users" className="nav-link">Users</Link>
-					</NavItem>
-					<NavItem className="px-3">
-						<NavLink to="#" className="nav-link">Settings</NavLink>
-					</NavItem>
-				</Nav>
+				<div style={{ paddingLeft: '30px'}}>
+					<img src="../public/assets/img/logo.png" style={{ height: '30px' }} />
+					<span> Translator</span>
+				</div>
 				<Nav className="ml-auto" navbar>
 					<NavItem className="d-md-down-none">
 						<NavLink to="#" className="nav-link"><i className="icon-bell"></i><Badge pill color="danger">5</Badge></NavLink>
@@ -97,6 +87,16 @@ class Header extends Component {
 					</NavItem>
 					<NavItem className="d-md-down-none">
 						<NavLink to="#" className="nav-link"><i className="icon-location-pin"></i></NavLink>
+					</NavItem>
+					<NavItem className="d-md-down-none">
+						<div style={{ width: '100px'}}>
+							<Select
+								value={options.filter(option => option.value === this.props.translate.language)}
+								onChange={this.onChangeLanguage}
+								options={options}
+								// components={{ Option: Option }}
+							/>
+						</div>
 					</NavItem>
 					<NavItem className="d-md-down-none">
 						<Dropdown direction="down" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
